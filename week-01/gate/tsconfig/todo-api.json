@@ -1,0 +1,29 @@
+{
+  // This is (almost) the tsconfig.json that `bun init` generates.
+  // Bun itself ignores most of it: Bun strips the types and runs the code.
+  // The settings matter for your editor and for `bun run typecheck` (tsc).
+  "compilerOptions": {
+    // Environment: Bun understands the newest JavaScript, so target it.
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "Preserve",
+    "moduleDetection": "force",
+    "types": ["bun"],
+
+    // Module resolution works like a bundler: Bun resolves the imports itself,
+    // so tsc only checks types and never writes .js files.
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    // Strictness. `strict` turns on null checks, no implicit any, and more.
+    "strict": true,
+    // array[i] and record[key] may be undefined, so TypeScript makes you check.
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "tests", "examples"]
+}

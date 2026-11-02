@@ -1,0 +1,11 @@
+Acceptance checks, week 1: all passed
+Your tasks are graded by the tests.
+
+[PASS] Submission files: everything the tests need is there
+       All required files found.
+[PASS] Submission files: no node_modules, .git, dist or .env in the zip
+       Not checked locally (your folder needs node_modules to run). CodeGrade checks the uploaded zip.
+[PASS] Dependencies: todo-api/package.json adds no packages
+       Only the lecture app's packages are used.
+[PASS] Type check: todo-api (tsc --noEmit with the course's tsconfig)
+       No type errors.

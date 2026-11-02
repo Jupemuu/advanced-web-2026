@@ -1,0 +1,6 @@
+# Bun configuration for the week 1 grading tests.
+
+[install]
+# Supply-chain hygiene: only resolve package versions that have been public
+# for at least a week. Exact versions already in bun.lock are not affected.
+minimumReleaseAge = 604800 # seconds (7 days)

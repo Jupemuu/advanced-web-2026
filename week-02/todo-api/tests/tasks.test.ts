@@ -126,7 +126,10 @@ describe("fallback", () => {
     expect((await read<never>(res)).ok).toBe(false);
   });
 
-  test("an unsupported method on a known path gives 404", async () => {
+  // The starting behaviour: no route matches, so the request falls through to
+  // the 404 fallback. Exercise 2 in the week's README changes this to 405 with
+  // an Allow header; update this test when you do it.
+  test("an unsupported method on a known path falls through to the 404 fallback", async () => {
     const res = await request("/api/tasks", "PATCH");
     expect(res.status).toBe(404);
   });

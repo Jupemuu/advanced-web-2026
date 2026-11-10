@@ -349,7 +349,9 @@ curl -i http://localhost:8000/api/tasks/999                                  # 4
    `description` and `status`. Use `Partial<UpdateTaskBody>` for the type. What
    should happen with an empty body `{}`?
 2. Return `405 Method Not Allowed` (with an `Allow` header listing the
-   supported methods) for `PATCH /api/tasks` instead of `404`.
+   supported methods) for `PATCH /api/tasks` instead of `404`. The test
+   "an unsupported method on a known path falls through to the 404 fallback"
+   checks the old behaviour: change it too.
 3. Add query parameters to `GET /api/tasks`: `?status=done` filters,
    `?q=word` searches titles. Validate both.
 4. Make the title editable in the front-end. Which request does the UI need to
